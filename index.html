@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Boca Labs — Boca Block</title>
+  <meta name="description" content="Boca Labs is building Boca Block. Get updates on availability.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="wrap nav">
+    <a href="/" class="logo">Boca<span>Labs</span></a>
+    <a href="#updates" class="btn btn-ghost">Get updates</a>
+  </header>
+
+  <main>
+    <section class="wrap hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Introducing Boca Block</p>
+        <h1>Built for the way your practice actually works.</h1>
+        <!-- TODO: replace with the real one-line product description -->
+        <p class="lede">Boca Block is a new product from Boca Labs. Sign up to hear first when it's available and to get early access pricing.</p>
+        <a href="#updates" class="btn">Get Boca Block updates</a>
+      </div>
+      <!-- TODO: replace this placeholder with the Boca Block render: <img src="/images/boca-block.png" alt="Boca Block"> -->
+      <div class="render" aria-hidden="true">
+        <svg viewBox="0 0 200 200" width="52%">
+          <polygon points="100,30 170,70 100,110 30,70" fill="#ffffff" stroke="#dedad0"/>
+          <polygon points="30,70 100,110 100,170 30,130" fill="#d9d4c7"/>
+          <polygon points="170,70 100,110 100,170 170,130" fill="#c4bdac"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="wrap features">
+      <!-- TODO: replace with real product points -->
+      <article><h3>Simple setup</h3><p>Placeholder: what makes Boca Block easy to start using.</p></article>
+      <article><h3>Made for practices</h3><p>Placeholder: the problem Boca Block solves day to day.</p></article>
+      <article><h3>Built to last</h3><p>Placeholder: quality, materials, or support.</p></article>
+    </section>
+
+    <section id="updates" class="wrap signup">
+      <h2>Get Boca Block updates</h2>
+      <p>We'll email you when Boca Block is ready. No spam.</p>
+      <form name="waitlist" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="company_url">
+        <input type="hidden" name="form-name" value="waitlist">
+        <p class="hp"><label>Leave blank <input name="company_url"></label></p>
+        <label>Name<input name="name" autocomplete="name" required></label>
+        <label>Work email<input type="email" name="email" autocomplete="email" required></label>
+        <label>Practice name<input name="practice" autocomplete="organization"></label>
+        <button class="btn" type="submit">Sign up</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="wrap footer">© <span id="y">2026</span> Boca Labs</footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+</body>
+</html>
