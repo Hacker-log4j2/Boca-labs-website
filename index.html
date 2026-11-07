@@ -4,222 +4,315 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Boca Block — Never miss a block again</title>
-  <meta name="description" content="Boca Block from Boca Labs. Never miss a block again.">
-  <meta name="theme-color" content="#EFEFF4">
+  <meta name="description" content="Boca Block is a bite block and needle guide that helps dentists position the needle for an inferior alveolar nerve block.">
+  <meta name="theme-color" content="#4A33C9">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="/images/boca-block-clear.png">
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <!-- Static copy of the feedback form so Netlify detects its fields at deploy time. The real form is in the dialog below. -->
-  <form name="feedback" data-netlify="true" netlify-honeypot="bot_field" enctype="multipart/form-data" hidden>
-    <input name="age"><input name="location"><input name="carpools"><textarea name="feedback"></textarea>
-    <input type="file" name="voice"><input type="file" name="photo1"><input type="file" name="photo2"><input type="file" name="photo3">
-    <input name="bot_field">
-  </form>
-
-  <header class="nav">
+  <header class="nav" id="nav">
     <div class="wrap nav-inner">
-      <a href="/" class="logo">Boca<span>Labs</span></a>
-      <nav class="nav-links">
-        <a href="#about">The device</a>
+      <a href="/" class="logo" aria-label="Boca Labs home">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="2.5"/><rect x="13" y="3" width="8" height="8" rx="4"/><rect x="3" y="13" width="8" height="8" rx="4"/><rect x="13" y="13" width="8" height="8" rx="2.5" opacity=".55"/></svg>
+        Boca Labs
+      </a>
+      <nav class="nav-pill glass" aria-label="Main">
+        <a href="#top" class="active"><i></i>Home</a>
+        <a href="#guide">How it works</a>
+        <a href="#material">Material</a>
         <a href="#updates">Updates</a>
       </nav>
-      <button class="btn btn-sm" type="button" data-open-feedback>Feedback</button>
+      <a class="btn btn-light btn-sm" href="/feedback">Feedback</a>
     </div>
   </header>
 
-  <main>
-    <!-- HERO -->
+  <main id="top">
+    <!-- ============ HERO ============ -->
     <section class="hero">
-      <div class="wrap hero-inner">
+      <div class="hero-bg" aria-hidden="true">
+        <span class="field f1"></span><span class="field f2"></span><span class="field f3"></span>
+        <span class="hero-glow"></span>
+        <img class="hero-subject" src="/images/boca-block-clear-sm.png" alt="">
+        <div class="reeds"></div>
+        <div class="grain"></div>
+      </div>
+
+      <!-- Floating product shot: left and right devices at opposite angles, with glass orbs -->
+      <div class="hero-product" id="hero-product">
+        <div class="float f-a"><img src="/images/boca-block-clear.png" width="1057" height="1200" fetchpriority="high"
+             alt="Two Boca Blocks in clear lilac resin, left and right versions, floating at opposite angles"></div>
+        <div class="float f-b" aria-hidden="true"><img src="/images/boca-block-clear.png" width="1057" height="1200" alt=""></div>
+        <span class="orb o1" aria-hidden="true"></span><span class="orb o2" aria-hidden="true"></span>
+        <span class="orb o3" aria-hidden="true"></span><span class="orb o4" aria-hidden="true"></span>
+      </div>
+
+      <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Boca Block</p>
-          <h1>Never miss<br>a block <em>again.</em></h1>
-          <!-- TODO: replace with the real one-line product description -->
-          <p class="lede">The Boca Block keeps you on schedule, every time. Join the list to hear first when it's ready.</p>
-          <div class="hero-ctas">
-            <a href="#updates" class="btn">Get updates</a>
-            <a href="#about" class="btn btn-ghost">See the device</a>
+          <p class="eyebrow">Boca Block · IAN bite block &amp; needle guide</p>
+          <h1>Never miss<br>a block again.</h1>
+          <p class="lede">A bite block and needle guide that uses your patient's teeth as reference points, so positioning the needle for an inferior alveolar nerve block takes less guesswork.</p>
+        </div>
+        <div class="hero-ctas">
+          <a href="#updates" class="btn btn-light">Get updates <span aria-hidden="true">↗</span></a>
+          <a href="#guide" class="text-link">See how it works <span aria-hidden="true">↗</span></a>
+        </div>
+        <ul class="hero-features">
+          <li><svg viewBox="0 0 24 24"><path d="M4 15h16M6 15V9m4 6V9m4 6V9m4 6V9"/></svg>Bite<br>stabilization</li>
+          <li><svg viewBox="0 0 24 24"><path d="M4 18 18 6"/><path d="M14 6h4v4"/></svg>Needle trajectory<br>guidance</li>
+          <li><svg viewBox="0 0 24 24"><rect x="4" y="9" width="16" height="6" rx="3"/><path d="M8 12h2m4 0h2"/></svg>Slotted viewing<br>windows</li>
+          <li><svg viewBox="0 0 24 24"><path d="M12 4a8 8 0 1 1-7.4 5"/><path d="M4 4v5h5"/></svg>Adjusts<br>−8° to +8°</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ OVERVIEW ============ -->
+    <section class="overview" id="overview">
+      <div class="wrap">
+        <p class="eyebrow reveal">What it is</p>
+        <h2 class="reveal">One device.<br>Two jobs.</h2>
+        <p class="overview-lede reveal">Boca Block is being developed to make needle positioning for the IAN block simpler and more consistent. It replaces part of the freehand estimate with a physical reference you can feel and see.</p>
+        <div class="duo">
+          <article class="duo-card reveal">
+            <span class="num">01</span>
+            <h3>Holds the bite</h3>
+            <p>Upper and lower bite surfaces seat on the posterior teeth, like a conventional bite block. Ridged traction keeps them from sliding.</p>
+            <svg class="duo-art" viewBox="0 0 200 90" aria-hidden="true"><rect x="20" y="36" width="160" height="18" rx="9" fill="#D5CEEC"/><g fill="#fff"><path d="M30 10h28v18q0 6-6 6H36q-6 0-6-6Z"/><path d="M66 10h28v18q0 6-6 6H72q-6 0-6-6Z"/><path d="M102 10h28v18q0 6-6 6h-16q-6 0-6-6Z"/><path d="M30 80h28V62q0-6-6-6H36q-6 0-6 6Z"/><path d="M66 80h28V62q0-6-6-6H72q-6 0-6 6Z"/><path d="M102 80h28V62q0-6-6-6h-16q-6 0-6 6Z"/></g><g stroke="#AFA3D6" stroke-width="2"><path d="M40 40v10M52 40v10M64 40v10M76 40v10M88 40v10M100 40v10M112 40v10M124 40v10M136 40v10M148 40v10M160 40v10"/></g></svg>
+          </article>
+          <article class="duo-card reveal">
+            <span class="num">02</span>
+            <h3>Guides the needle</h3>
+            <p>An integrated guide presents the needle at the intended approach angle once the block is seated, so the starting trajectory is repeatable.</p>
+            <svg class="duo-art" viewBox="0 0 200 90" aria-hidden="true"><g transform="rotate(-14 100 45)"><rect x="40" y="34" width="110" height="22" rx="11" fill="none" stroke="#AFA3D6" stroke-width="3"/><rect x="62" y="34" width="22" height="6" fill="#fff"/><rect x="100" y="34" width="22" height="6" fill="#fff"/><path d="M10 45h175" stroke="#2E2C39" stroke-width="2" stroke-dasharray="4 5"/><circle cx="188" cy="45" r="6" fill="#F3B95F"/></g></svg>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT GUIDES (scroll-driven) ============ -->
+    <section class="story" id="guide" data-scrub>
+      <div class="story-sticky">
+        <div class="hero-bg" aria-hidden="true"><span class="field f1"></span><span class="field f2"></span><div class="reeds"></div><div class="grain"></div></div>
+        <div class="wrap story-grid">
+          <div class="story-copy">
+            <p class="eyebrow">How it works</p>
+            <h2>From seat<br>to needle.</h2>
+            <ol class="steps" id="steps">
+              <li data-n="1" class="active"><b>Seat it on the posterior teeth</b><span>Line up the small alignment notch with the dental reference point.</span></li>
+              <li data-n="2"><b>Patient bites down</b><span>Closing onto the ridged surfaces holds the guide steady.</span></li>
+              <li data-n="3"><b>Follow the guide</b><span>The guide presents the needle at the intended approach angle.</span></li>
+              <li data-n="4"><b>Watch it through the windows</b><span>Slotted openings show the needle and how far it has advanced.</span></li>
+            </ol>
+          </div>
+
+          <!-- Cartoon side view. Driven by --seat, --bite, --push (0..1) set from scroll in app.js -->
+          <div class="scene" id="scene" aria-label="Animation: Boca Block seats on the lower teeth, the patient bites, and the syringe needle slides through the guide toward the nerve" role="img">
+            <svg viewBox="0 0 640 520">
+              <defs>
+                <linearGradient id="steel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".45" stop-color="#C9C7D6"/><stop offset="1" stop-color="#8A87A0"/></linearGradient>
+                <linearGradient id="resin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EAE4FF" stop-opacity=".95"/><stop offset="1" stop-color="#B9A9F0" stop-opacity=".8"/></linearGradient>
+                <radialGradient id="nerveGlow"><stop offset="0" stop-color="#FFD58A"/><stop offset="1" stop-color="#FFD58A" stop-opacity="0"/></radialGradient>
+                <clipPath id="tissueClip"><path d="M470 60 C560 60 610 140 610 260 C610 380 560 470 470 470 L470 60Z"/></clipPath>
+              </defs>
+
+              <!-- ramus / soft tissue on the right -->
+              <path d="M470 60 C560 60 610 140 610 260 C610 380 560 470 470 470 L470 60Z" fill="#F4B8C4" opacity=".9"/>
+              <path d="M470 60 C530 70 560 150 560 260 C560 370 530 450 470 470" fill="none" stroke="#E79AAB" stroke-width="3"/>
+              <!-- nerve -->
+              <g class="nerve">
+                <circle cx="548" cy="258" r="44" fill="url(#nerveGlow)" class="nerve-glow"/>
+                <path d="M520 120 C552 190 548 230 548 258 C548 300 560 360 590 430" fill="none" stroke="#F3B95F" stroke-width="7" stroke-linecap="round"/>
+                <circle cx="548" cy="258" r="9" fill="#FFF3D6" stroke="#F3B95F" stroke-width="4"/>
+              </g>
+
+              <!-- lower teeth + gum -->
+              <rect x="40" y="372" width="420" height="58" rx="26" fill="#F4B8C4"/>
+              <g fill="#FFFFFF" stroke="#E8E2F5" stroke-width="2">
+                <path d="M70 380v-48q0-14 14-14h52q14 0 14 14v48Z"/><path d="M170 380v-50q0-14 14-14h56q14 0 14 14v50Z"/><path d="M274 380v-50q0-14 14-14h56q14 0 14 14v50Z"/><path d="M378 380v-46q0-14 14-14h44q14 0 14 14v46Z"/>
+              </g>
+
+              <!-- upper teeth (drop on bite) -->
+              <g class="upper">
+                <rect x="40" y="78" width="420" height="58" rx="26" fill="#F4B8C4"/>
+                <g fill="#FFFFFF" stroke="#E8E2F5" stroke-width="2">
+                  <path d="M70 128v48q0 14 14 14h52q14 0 14-14v-48Z"/><path d="M170 128v50q0 14 14 14h56q14 0 14-14v-50Z"/><path d="M274 128v50q0 14 14 14h56q14 0 14-14v-50Z"/><path d="M378 128v46q0 14 14 14h44q14 0 14-14v-46Z"/>
+                </g>
+              </g>
+
+              <!-- Boca Block (drops in to seat) -->
+              <g class="device">
+                <!-- bite pad with ridges -->
+                <rect x="150" y="270" width="230" height="46" rx="16" fill="url(#resin)" stroke="#fff" stroke-opacity=".8" stroke-width="2"/>
+                <g stroke="#9C8AE0" stroke-width="2" opacity=".7"><path d="M170 276v34M188 276v34M206 276v34M224 276v34M242 276v34M260 276v34M278 276v34M296 276v34M314 276v34M332 276v34M350 276v34"/></g>
+                <!-- alignment notch -->
+                <path d="M255 316l10 14 10-14Z" fill="#F3B95F"/>
+                <!-- guide tube with slotted windows, angled toward the nerve -->
+                <g transform="rotate(5 330 238)">
+                  <rect x="200" y="216" width="270" height="44" rx="22" fill="url(#resin)" stroke="#fff" stroke-opacity=".85" stroke-width="2"/>
+                  <rect x="236" y="221" width="52" height="11" rx="5.5" fill="#4A33C9" opacity=".35"/>
+                  <rect x="306" y="221" width="52" height="11" rx="5.5" fill="#4A33C9" opacity=".35"/>
+                  <rect x="376" y="221" width="52" height="11" rx="5.5" fill="#4A33C9" opacity=".35"/>
+                </g>
+                <!-- handle -->
+                <path d="M150 293 H52 q-22 0 -22 22 v0 q0 22 22 22 H120" fill="none" stroke="url(#resin)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+
+              <!-- Syringe on the guide axis (slides on push) -->
+              <g transform="rotate(5 330 238)">
+                <g class="syringe">
+                  <!-- needle -->
+                  <rect x="-40" y="236.5" width="250" height="3" rx="1.5" fill="#6E6A86"/>
+                  <!-- hub -->
+                  <rect x="-62" y="230" width="24" height="16" rx="4" fill="url(#steel)"/>
+                  <!-- barrel -->
+                  <rect x="-250" y="220" width="190" height="36" rx="10" fill="url(#steel)" stroke="#7B7893" stroke-width="2"/>
+                  <rect x="-224" y="228" width="130" height="20" rx="6" fill="#2E2C39" opacity=".18"/>
+                  <rect x="-218" y="230" width="104" height="16" rx="6" fill="#F3B95F" opacity=".9"/>
+                  <!-- finger flange -->
+                  <path d="M-262 200 q8 38 0 76" fill="none" stroke="url(#steel)" stroke-width="10" stroke-linecap="round"/>
+                  <!-- plunger + thumb ring -->
+                  <rect x="-330" y="232" width="70" height="12" rx="4" fill="url(#steel)"/>
+                  <circle cx="-356" cy="238" r="26" fill="none" stroke="url(#steel)" stroke-width="10"/>
+                </g>
+              </g>
+
+              <!-- needle visible "through the window" highlight -->
+              <g class="window-glint" transform="rotate(5 330 238)"><rect x="306" y="221" width="52" height="11" rx="5.5" fill="#fff"/></g>
+            </svg>
+            <div class="scene-tag" id="scene-tag">Seat</div>
           </div>
         </div>
+        <p class="wrap story-note">You stay in control. Landmarks, patient suitability, needle depth, aspiration and technique remain the clinician's call. Illustration is simplified.</p>
+      </div>
+    </section>
 
-        <!-- TODO: replace this placeholder render with the product shot:
-             <img class="hero-img" src="/images/boca-block-hero.jpg" alt="Boca Block"> -->
-        <div class="hero-shot" aria-label="Boca Block product render (placeholder)" role="img">
-          <div class="glow"></div>
-          <svg class="device" viewBox="0 0 320 420" aria-hidden="true">
-            <defs>
-              <linearGradient id="body" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#C9C0E8"/>
-                <stop offset=".55" stop-color="#9B8DD0"/>
-                <stop offset="1" stop-color="#6F62A8"/>
-              </linearGradient>
-              <linearGradient id="face" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#3A3748"/>
-                <stop offset="1" stop-color="#22212C"/>
-              </linearGradient>
-              <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0" stop-color="#fff" stop-opacity=".55"/>
-                <stop offset=".35" stop-color="#fff" stop-opacity="0"/>
-              </linearGradient>
-            </defs>
-            <rect x="40" y="20" width="240" height="380" rx="64" fill="url(#body)"/>
-            <rect x="40" y="20" width="240" height="380" rx="64" fill="url(#sheen)"/>
-            <rect x="72" y="60" width="176" height="120" rx="28" fill="url(#face)"/>
-            <circle cx="160" cy="120" r="30" fill="none" stroke="#AFA3D6" stroke-width="6" stroke-dasharray="140 60" stroke-linecap="round"/>
-            <circle cx="160" cy="120" r="6" fill="#D5CEEC"/>
-            <rect x="122" y="250" width="76" height="76" rx="38" fill="#EFEFF4" opacity=".9"/>
-            <rect x="140" y="268" width="40" height="40" rx="20" fill="#D5CEEC"/>
+    <!-- ============ ROTATION ============ -->
+    <section class="rotate" id="rotate">
+      <div class="wrap rotate-grid">
+        <div class="rotate-copy">
+          <p class="eyebrow reveal">Adjustable</p>
+          <h2 class="reveal">Turns to fit<br>the patient.</h2>
+          <p class="reveal">The guide pivots on its point of rotation from −8° to +8°, and a handle lets you set the angle. That range lets one design adjust to different patients and arch shapes.</p>
+          <label class="angle-ctl reveal">
+            <span>Try it</span>
+            <input type="range" id="angle" min="-8" max="8" step="0.5" value="0" aria-label="Guide angle in degrees">
+          </label>
+        </div>
+        <div class="dial reveal" aria-label="Top view: the needle guide rotating between minus 8 and plus 8 degrees" role="img">
+          <svg viewBox="0 0 400 420">
+            <defs><linearGradient id="resin2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EAE4FF"/><stop offset="1" stop-color="#B9A9F0"/></linearGradient></defs>
+            <!-- arc + ticks -->
+            <g fill="none" stroke="#D5CEEC" stroke-width="2">
+              <path d="M200 260 m-170 0 a170 170 0 0 1 340 0" opacity=".0"/>
+            </g>
+            <g id="ticks" stroke="#AFA3D6" stroke-width="2"></g>
+            <text x="164" y="54" class="dial-lbl" text-anchor="end">−8°</text><text x="200" y="44" class="dial-lbl" text-anchor="middle">0°</text><text x="236" y="54" class="dial-lbl">+8°</text>
+            <!-- fixed base: bite surfaces -->
+            <rect x="110" y="250" width="180" height="120" rx="34" fill="url(#resin2)" stroke="#fff" stroke-width="2"/>
+            <g stroke="#9C8AE0" stroke-width="2" opacity=".6"><path d="M130 268h140M130 286h140M130 304h140M130 322h140M130 340h140"/></g>
+            <!-- rotating guide arm -->
+            <g id="arm" style="transform-origin: 200px 260px">
+              <rect x="176" y="70" width="48" height="200" rx="24" fill="url(#resin2)" stroke="#fff" stroke-width="2" opacity=".95"/>
+              <rect x="192" y="96" width="16" height="42" rx="8" fill="#4A33C9" opacity=".3"/>
+              <rect x="192" y="152" width="16" height="42" rx="8" fill="#4A33C9" opacity=".3"/>
+              <path d="M200 60 V20" stroke="#2E2C39" stroke-width="2" stroke-dasharray="4 5"/>
+            </g>
+            <circle cx="200" cy="260" r="16" fill="#fff" stroke="#AFA3D6" stroke-width="4"/>
+            <circle cx="200" cy="260" r="5" fill="#5A3FD9"/>
           </svg>
-          <span class="orb orb-a"></span><span class="orb orb-b"></span><span class="orb orb-c"></span>
+          <output class="dial-read" id="angle-read">0°</output>
         </div>
       </div>
-      <a href="#about" class="scroll-cue" aria-label="Scroll to learn about the device"><span></span></a>
     </section>
 
-    <!-- ABOUT THE DEVICE -->
-    <section id="about" class="about">
+    <!-- ============ MATERIAL ============ -->
+    <section class="material" id="material">
+      <div class="wrap material-grid">
+        <div class="material-shot reveal">
+          <img src="/images/boca-block-clear.png" width="1057" height="1200" loading="lazy" alt="Close view of Boca Block's clear lilac resin">
+        </div>
+        <div class="material-copy">
+          <p class="eyebrow reveal">Material</p>
+          <h2 class="reveal">Clear. Flexible.<br>ISO-compliant.</h2>
+          <!-- TODO: confirm exact resin name and certification wording with the team before launch -->
+          <p class="reveal">Boca Block is made in BioMed flexible resin, an ISO-compliant material. It's clear, so you can see the needle and treatment area through it, with enough give to seat comfortably on the teeth.</p>
+          <ul class="tags reveal">
+            <li>ISO-compliant material</li>
+            <li>BioMed flexible resin</li>
+            <li>See-through</li>
+            <li>Ridged grip</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DESIGN DETAILS (bento) ============ -->
+    <section class="details" id="details">
+      <div class="hero-bg" aria-hidden="true"><span class="field f1"></span><span class="field f2"></span><div class="reeds"></div><div class="grain"></div></div>
       <div class="wrap">
-        <p class="eyebrow reveal">The device</p>
-        <h2 class="reveal">Small block.<br>Big difference.</h2>
-      </div>
-
-      <!-- TODO: replace the three feature blocks below with real product details -->
-      <div class="wrap feature reveal">
-        <div class="feature-art art-1" aria-hidden="true"><span class="ring"></span><span class="dot"></span></div>
-        <div class="feature-copy">
-          <span class="num">01</span>
-          <h3>Always on time</h3>
-          <p>Placeholder: what Boca Block tracks, and how it makes sure nothing gets missed.</p>
+        <p class="eyebrow reveal">Design details</p>
+        <h2 class="reveal">Every part has a job.</h2>
+        <div class="bento">
+          <article class="tile glass tile-wide reveal">
+            <h3>Slotted viewing windows</h3>
+            <p>Openings along the guide let you see the needle pass through, estimate how far it has advanced, and lift the device away without threading the needle back through a closed tube.</p>
+            <svg class="tile-art" viewBox="0 0 300 70" aria-hidden="true"><rect x="10" y="18" width="280" height="34" rx="17" fill="rgba(255,255,255,.18)" stroke="rgba(255,255,255,.6)" stroke-width="2"/><g fill="rgba(20,10,70,.35)"><rect x="44" y="22" width="56" height="10" rx="5"/><rect x="122" y="22" width="56" height="10" rx="5"/><rect x="200" y="22" width="56" height="10" rx="5"/></g><rect class="slide-needle" x="0" y="34" width="190" height="3" rx="1.5" fill="#fff"/></svg>
+          </article>
+          <article class="tile glass reveal">
+            <h3>Ridged bite surfaces</h3>
+            <p>Traction ridges reduce sliding between the teeth and the block.</p>
+            <svg class="tile-art" viewBox="0 0 160 60" aria-hidden="true"><rect x="8" y="14" width="144" height="32" rx="12" fill="rgba(255,255,255,.2)"/><g stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M28 20v20M44 20v20M60 20v20M76 20v20M92 20v20M108 20v20M124 20v20M140 20v20"/></g></svg>
+          </article>
+          <article class="tile glass reveal">
+            <h3>Alignment notch</h3>
+            <p>A small triangular notch gives a visual and tactile reference for seating it against the teeth.</p>
+            <svg class="tile-art" viewBox="0 0 160 60" aria-hidden="true"><rect x="8" y="10" width="144" height="22" rx="10" fill="rgba(255,255,255,.2)"/><path d="M68 32l12 18 12-18Z" fill="#F3B95F"/><path d="M80 54v6" stroke="#fff" stroke-width="2"/></svg>
+          </article>
+          <article class="tile glass reveal">
+            <h3>Handle</h3>
+            <p>Gives you a grip to control the angle while you position the guide.</p>
+            <svg class="tile-art" viewBox="0 0 160 60" aria-hidden="true"><path d="M30 46h70q20 0 20-16t-20-16H70" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" opacity=".85"/></svg>
+          </article>
+          <article class="tile glass reveal">
+            <h3>Point of rotation</h3>
+            <p>The guide pivots −8° to +8° so the angle can be adjusted per patient.</p>
+            <svg class="tile-art" viewBox="0 0 160 60" aria-hidden="true"><g class="mini-arm" style="transform-origin:80px 50px"><rect x="72" y="4" width="16" height="48" rx="8" fill="rgba(255,255,255,.85)"/></g><circle cx="80" cy="50" r="7" fill="#F3B95F"/></svg>
+          </article>
+          <article class="tile glass tile-wide reveal">
+            <h3>Left and right versions</h3>
+            <p>Current prototypes come as separate left-side and right-side devices marked L and R. You pick the one for the side you're injecting. A single universal design may replace them later. Subject to change.</p>
+            <div class="lr" aria-hidden="true"><span>L</span><span>R</span></div>
+          </article>
         </div>
-      </div>
-
-      <div class="wrap feature feature-flip reveal">
-        <div class="feature-art art-2" aria-hidden="true"><span></span><span></span><span></span></div>
-        <div class="feature-copy">
-          <span class="num">02</span>
-          <h3>Alerts that reach you</h3>
-          <p>Placeholder: how and when Boca Block lets you know it's time.</p>
-        </div>
-      </div>
-
-      <div class="wrap feature reveal">
-        <div class="feature-art art-3" aria-hidden="true"><span class="block-a"></span><span class="block-b"></span></div>
-        <div class="feature-copy">
-          <span class="num">03</span>
-          <h3>Set up in minutes</h3>
-          <p>Placeholder: what's in the box and how fast you can get going.</p>
-        </div>
-      </div>
-
-      <!-- TODO: real specs -->
-      <div class="wrap specs reveal">
-        <div><strong>—</strong><span>Battery life</span></div>
-        <div><strong>—</strong><span>Size</span></div>
-        <div><strong>—</strong><span>Connectivity</span></div>
-        <div><strong>—</strong><span>Warranty</span></div>
+        <p class="details-note reveal">Boca Block is in development. Prototype features and specifications are subject to change.</p>
       </div>
     </section>
 
-    <!-- WAITLIST -->
+    <!-- ============ WAITLIST ============ -->
     <section id="updates" class="wrap signup reveal">
-      <h2>Get Boca Block updates</h2>
-      <p>We'll email you when Boca Block is ready. No spam.</p>
-      <form name="waitlist" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="company_url">
-        <input type="hidden" name="form-name" value="waitlist">
-        <p class="hp"><label>Leave blank <input name="company_url"></label></p>
-        <label>Name<input name="name" autocomplete="name" required></label>
-        <label>Work email<input type="email" name="email" autocomplete="email" required></label>
-        <label>Practice name<input name="practice" autocomplete="organization"></label>
-        <button class="btn" type="submit">Sign up</button>
-      </form>
+      <div class="reeds" aria-hidden="true"></div>
+      <div class="signup-inner">
+        <h2>Get Boca Block updates</h2>
+        <p>We'll email you when Boca Block is ready. No spam.</p>
+        <form name="waitlist" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="company_url">
+          <input type="hidden" name="form-name" value="waitlist">
+          <p class="hp"><label>Leave blank <input name="company_url"></label></p>
+          <label>Name<input name="name" autocomplete="name" required></label>
+          <label>Work email<input type="email" name="email" autocomplete="email" required></label>
+          <label>Practice name<input name="practice" autocomplete="organization"></label>
+          <button class="btn btn-light" type="submit">Sign up</button>
+        </form>
+      </div>
     </section>
   </main>
 
   <footer class="wrap footer">
     <span>© <span id="y">2026</span> Boca Labs</span>
-    <button type="button" class="link" data-open-feedback>Send feedback</button>
+    <a href="/feedback">Trying a prototype? Send feedback</a>
   </footer>
 
-  <!-- FEEDBACK DIALOG -->
-  <dialog id="feedback" class="sheet" aria-labelledby="fb-title">
-    <form id="fb-form" class="fb" novalidate>
-      <div class="fb-head">
-        <h2 id="fb-title">Feedback</h2>
-        <button type="button" class="icon-btn" data-close aria-label="Close">✕</button>
-      </div>
-      <p class="fb-sub">Tell us how Boca Block worked for you.</p>
-      <p class="hp"><label>Leave blank <input name="bot_field" tabindex="-1" autocomplete="off"></label></p>
-
-      <fieldset class="fb-step">
-        <legend><span>1</span>About you</legend>
-        <label class="field">Age
-          <input name="age" type="number" inputmode="numeric" min="1" max="120" placeholder="e.g. 34" required>
-        </label>
-        <div class="field">
-          <span>Current location</span>
-          <div class="loc">
-            <button type="button" class="btn btn-ghost btn-sm" id="loc-btn">📍 Use my location</button>
-            <span id="loc-status" class="hint">Optional</span>
-          </div>
-          <input type="hidden" name="location" id="loc-val">
-        </div>
-      </fieldset>
-
-      <fieldset class="fb-step">
-        <legend><span>2</span>How many carpools did it take?</legend>
-        <div class="seg" role="radiogroup">
-          <label><input type="radio" name="carpools" value="1" required><span>1</span></label>
-          <label><input type="radio" name="carpools" value="2"><span>2</span></label>
-          <label><input type="radio" name="carpools" value="3"><span>3</span></label>
-        </div>
-      </fieldset>
-
-      <fieldset class="fb-step">
-        <legend><span>3</span>Feedback</legend>
-        <label class="field">What didn't work?
-          <textarea name="feedback" rows="3" placeholder="Type here, or hold the mic to record"></textarea>
-        </label>
-
-        <div class="rec">
-          <button type="button" class="mic" id="mic" aria-label="Hold to record a voice note">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 1 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-2.08A7 7 0 0 0 19 12h-2Z"/></svg>
-          </button>
-          <div class="rec-info">
-            <strong id="rec-label">Hold to record</strong>
-            <span id="rec-hint" class="hint">Press and hold, let go to stop</span>
-            <div id="rec-player" class="rec-player" hidden>
-              <audio id="rec-audio" controls></audio>
-              <button type="button" class="link" id="rec-del">Delete</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="field">
-          <span>Photos <em class="hint">up to 3</em></span>
-          <div class="photos" id="photos">
-            <label class="add-photo">
-              <input type="file" id="photo-input" accept="image/*" multiple>
-              <span>＋</span>
-            </label>
-          </div>
-        </div>
-      </fieldset>
-
-      <p id="fb-error" class="fb-error" role="alert" hidden></p>
-      <button class="btn btn-block" type="submit" id="fb-submit">Send feedback</button>
-    </form>
-
-    <div class="fb-done" id="fb-done" hidden>
-      <div class="check">✓</div>
-      <h2>Thanks!</h2>
-      <p>Your feedback was sent to the Boca Labs team.</p>
-      <button type="button" class="btn" data-close>Close</button>
-    </div>
-  </dialog>
-
-  <script src="app.js" defer></script>
+  <script src="/app.js" defer></script>
 </body>
 </html>
