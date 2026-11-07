@@ -3,46 +3,128 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Boca Labs — Boca Block</title>
-  <meta name="description" content="Boca Labs is building Boca Block. Get updates on availability.">
+  <title>Boca Block — Never miss a block again</title>
+  <meta name="description" content="Boca Block from Boca Labs. Never miss a block again.">
+  <meta name="theme-color" content="#EFEFF4">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="wrap nav">
-    <a href="/" class="logo">Boca<span>Labs</span></a>
-    <a href="#updates" class="btn btn-ghost">Get updates</a>
+  <!-- Static copy of the feedback form so Netlify detects its fields at deploy time. The real form is in the dialog below. -->
+  <form name="feedback" data-netlify="true" netlify-honeypot="bot_field" enctype="multipart/form-data" hidden>
+    <input name="age"><input name="location"><input name="carpools"><textarea name="feedback"></textarea>
+    <input type="file" name="voice"><input type="file" name="photo1"><input type="file" name="photo2"><input type="file" name="photo3">
+    <input name="bot_field">
+  </form>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a href="/" class="logo">Boca<span>Labs</span></a>
+      <nav class="nav-links">
+        <a href="#about">The device</a>
+        <a href="#updates">Updates</a>
+      </nav>
+      <button class="btn btn-sm" type="button" data-open-feedback>Feedback</button>
+    </div>
   </header>
 
   <main>
-    <section class="wrap hero">
-      <div class="hero-copy">
-        <p class="eyebrow">Introducing Boca Block</p>
-        <h1>Built for the way your practice actually works.</h1>
-        <!-- TODO: replace with the real one-line product description -->
-        <p class="lede">Boca Block is a new product from Boca Labs. Sign up to hear first when it's available and to get early access pricing.</p>
-        <a href="#updates" class="btn">Get Boca Block updates</a>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Boca Block</p>
+          <h1>Never miss<br>a block <em>again.</em></h1>
+          <!-- TODO: replace with the real one-line product description -->
+          <p class="lede">The Boca Block keeps you on schedule, every time. Join the list to hear first when it's ready.</p>
+          <div class="hero-ctas">
+            <a href="#updates" class="btn">Get updates</a>
+            <a href="#about" class="btn btn-ghost">See the device</a>
+          </div>
+        </div>
+
+        <!-- TODO: replace this placeholder render with the product shot:
+             <img class="hero-img" src="/images/boca-block-hero.jpg" alt="Boca Block"> -->
+        <div class="hero-shot" aria-label="Boca Block product render (placeholder)" role="img">
+          <div class="glow"></div>
+          <svg class="device" viewBox="0 0 320 420" aria-hidden="true">
+            <defs>
+              <linearGradient id="body" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#C9C0E8"/>
+                <stop offset=".55" stop-color="#9B8DD0"/>
+                <stop offset="1" stop-color="#6F62A8"/>
+              </linearGradient>
+              <linearGradient id="face" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#3A3748"/>
+                <stop offset="1" stop-color="#22212C"/>
+              </linearGradient>
+              <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#fff" stop-opacity=".55"/>
+                <stop offset=".35" stop-color="#fff" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <rect x="40" y="20" width="240" height="380" rx="64" fill="url(#body)"/>
+            <rect x="40" y="20" width="240" height="380" rx="64" fill="url(#sheen)"/>
+            <rect x="72" y="60" width="176" height="120" rx="28" fill="url(#face)"/>
+            <circle cx="160" cy="120" r="30" fill="none" stroke="#AFA3D6" stroke-width="6" stroke-dasharray="140 60" stroke-linecap="round"/>
+            <circle cx="160" cy="120" r="6" fill="#D5CEEC"/>
+            <rect x="122" y="250" width="76" height="76" rx="38" fill="#EFEFF4" opacity=".9"/>
+            <rect x="140" y="268" width="40" height="40" rx="20" fill="#D5CEEC"/>
+          </svg>
+          <span class="orb orb-a"></span><span class="orb orb-b"></span><span class="orb orb-c"></span>
+        </div>
       </div>
-      <!-- TODO: replace this placeholder with the Boca Block render: <img src="/images/boca-block.png" alt="Boca Block"> -->
-      <div class="render" aria-hidden="true">
-        <svg viewBox="0 0 200 200" width="52%">
-          <polygon points="100,30 170,70 100,110 30,70" fill="#ffffff" stroke="#dedad0"/>
-          <polygon points="30,70 100,110 100,170 30,130" fill="#d9d4c7"/>
-          <polygon points="170,70 100,110 100,170 170,130" fill="#c4bdac"/>
-        </svg>
+      <a href="#about" class="scroll-cue" aria-label="Scroll to learn about the device"><span></span></a>
+    </section>
+
+    <!-- ABOUT THE DEVICE -->
+    <section id="about" class="about">
+      <div class="wrap">
+        <p class="eyebrow reveal">The device</p>
+        <h2 class="reveal">Small block.<br>Big difference.</h2>
+      </div>
+
+      <!-- TODO: replace the three feature blocks below with real product details -->
+      <div class="wrap feature reveal">
+        <div class="feature-art art-1" aria-hidden="true"><span class="ring"></span><span class="dot"></span></div>
+        <div class="feature-copy">
+          <span class="num">01</span>
+          <h3>Always on time</h3>
+          <p>Placeholder: what Boca Block tracks, and how it makes sure nothing gets missed.</p>
+        </div>
+      </div>
+
+      <div class="wrap feature feature-flip reveal">
+        <div class="feature-art art-2" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="feature-copy">
+          <span class="num">02</span>
+          <h3>Alerts that reach you</h3>
+          <p>Placeholder: how and when Boca Block lets you know it's time.</p>
+        </div>
+      </div>
+
+      <div class="wrap feature reveal">
+        <div class="feature-art art-3" aria-hidden="true"><span class="block-a"></span><span class="block-b"></span></div>
+        <div class="feature-copy">
+          <span class="num">03</span>
+          <h3>Set up in minutes</h3>
+          <p>Placeholder: what's in the box and how fast you can get going.</p>
+        </div>
+      </div>
+
+      <!-- TODO: real specs -->
+      <div class="wrap specs reveal">
+        <div><strong>—</strong><span>Battery life</span></div>
+        <div><strong>—</strong><span>Size</span></div>
+        <div><strong>—</strong><span>Connectivity</span></div>
+        <div><strong>—</strong><span>Warranty</span></div>
       </div>
     </section>
 
-    <section class="wrap features">
-      <!-- TODO: replace with real product points -->
-      <article><h3>Simple setup</h3><p>Placeholder: what makes Boca Block easy to start using.</p></article>
-      <article><h3>Made for practices</h3><p>Placeholder: the problem Boca Block solves day to day.</p></article>
-      <article><h3>Built to last</h3><p>Placeholder: quality, materials, or support.</p></article>
-    </section>
-
-    <section id="updates" class="wrap signup">
+    <!-- WAITLIST -->
+    <section id="updates" class="wrap signup reveal">
       <h2>Get Boca Block updates</h2>
       <p>We'll email you when Boca Block is ready. No spam.</p>
       <form name="waitlist" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="company_url">
@@ -56,7 +138,88 @@
     </section>
   </main>
 
-  <footer class="wrap footer">© <span id="y">2026</span> Boca Labs</footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+  <footer class="wrap footer">
+    <span>© <span id="y">2026</span> Boca Labs</span>
+    <button type="button" class="link" data-open-feedback>Send feedback</button>
+  </footer>
+
+  <!-- FEEDBACK DIALOG -->
+  <dialog id="feedback" class="sheet" aria-labelledby="fb-title">
+    <form id="fb-form" class="fb" novalidate>
+      <div class="fb-head">
+        <h2 id="fb-title">Feedback</h2>
+        <button type="button" class="icon-btn" data-close aria-label="Close">✕</button>
+      </div>
+      <p class="fb-sub">Tell us how Boca Block worked for you.</p>
+      <p class="hp"><label>Leave blank <input name="bot_field" tabindex="-1" autocomplete="off"></label></p>
+
+      <fieldset class="fb-step">
+        <legend><span>1</span>About you</legend>
+        <label class="field">Age
+          <input name="age" type="number" inputmode="numeric" min="1" max="120" placeholder="e.g. 34" required>
+        </label>
+        <div class="field">
+          <span>Current location</span>
+          <div class="loc">
+            <button type="button" class="btn btn-ghost btn-sm" id="loc-btn">📍 Use my location</button>
+            <span id="loc-status" class="hint">Optional</span>
+          </div>
+          <input type="hidden" name="location" id="loc-val">
+        </div>
+      </fieldset>
+
+      <fieldset class="fb-step">
+        <legend><span>2</span>How many carpools did it take?</legend>
+        <div class="seg" role="radiogroup">
+          <label><input type="radio" name="carpools" value="1" required><span>1</span></label>
+          <label><input type="radio" name="carpools" value="2"><span>2</span></label>
+          <label><input type="radio" name="carpools" value="3"><span>3</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="fb-step">
+        <legend><span>3</span>Feedback</legend>
+        <label class="field">What didn't work?
+          <textarea name="feedback" rows="3" placeholder="Type here, or hold the mic to record"></textarea>
+        </label>
+
+        <div class="rec">
+          <button type="button" class="mic" id="mic" aria-label="Hold to record a voice note">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 1 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-2.08A7 7 0 0 0 19 12h-2Z"/></svg>
+          </button>
+          <div class="rec-info">
+            <strong id="rec-label">Hold to record</strong>
+            <span id="rec-hint" class="hint">Press and hold, let go to stop</span>
+            <div id="rec-player" class="rec-player" hidden>
+              <audio id="rec-audio" controls></audio>
+              <button type="button" class="link" id="rec-del">Delete</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <span>Photos <em class="hint">up to 3</em></span>
+          <div class="photos" id="photos">
+            <label class="add-photo">
+              <input type="file" id="photo-input" accept="image/*" multiple>
+              <span>＋</span>
+            </label>
+          </div>
+        </div>
+      </fieldset>
+
+      <p id="fb-error" class="fb-error" role="alert" hidden></p>
+      <button class="btn btn-block" type="submit" id="fb-submit">Send feedback</button>
+    </form>
+
+    <div class="fb-done" id="fb-done" hidden>
+      <div class="check">✓</div>
+      <h2>Thanks!</h2>
+      <p>Your feedback was sent to the Boca Labs team.</p>
+      <button type="button" class="btn" data-close>Close</button>
+    </div>
+  </dialog>
+
+  <script src="app.js" defer></script>
 </body>
 </html>
