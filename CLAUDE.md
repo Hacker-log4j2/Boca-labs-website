@@ -23,3 +23,9 @@ Static site, no build step. Hosted on Netlify (boca-labs.com) from `main`.
 ## Workflow
 - Preview locally with the `site` launch config (python http.server on port 4321).
 - Make changes on a branch and open a PR so Netlify builds a deploy preview; merge to `main` to publish.
+
+## Live 3D (next step)
+- Before building any real-time 3D (three.js) for the hero or scroll story, read `docs/live-3d-guide.md`. It adapts the team's "live 3D" guide to Boca Block and this static stack: GLB from CAD, clear-resin physical material, PMREM studio light, scroll cue list, exploded view, performance and known bugs.
+
+## Not public
+- `CLAUDE.md`, `README.md` and `docs/` are blocked from the live site in `netlify.toml` (the publish dir is the repo root). Keep internal notes in those places, never in served pages.
